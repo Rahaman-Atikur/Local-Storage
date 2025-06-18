@@ -3,7 +3,7 @@ const handleAddToCart = () => {
   const productQuantity = document.getElementById("productQuantity");
   let name = productName.value;
   let quantity = productQuantity.value;
-  setToLocalStorage(name,quantity);
+  saveProductToLocalStorage(name,quantity);
   displayCart(name, quantity);
   productName.value = "";
   productQuantity.value = "";
@@ -15,8 +15,16 @@ const displayCart = (name, quantity) => {
   list.innerText = `${name}:${quantity}`;
   productList.appendChild(list);
 };
+const getProductFromLocalStorage=()=>{
+  let cart = {};
+  const getProduct = localStorage.getItem("cart");
+  if(getProduct){
+    cart = JSON.parse(getProduct);
+  }
+  return cart;
 
-const setToLocalStorage = (name,quantity) => {
-  const cartObject = {itemName: name,itemNumber:quantity};
-  localStorage.setItem("cart",JSON.stringify(cartObject));
+}
+
+const saveProductToLocalStorage = (name,quantity) => {
+  let cart = getProductFromLocalStorage();
 };
