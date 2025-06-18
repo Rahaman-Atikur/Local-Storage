@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Local Storage</title>
 </head>
+
 <body>
-    
+    <input class="mx-10 my-10" id="productName" type="text" placeholder="Product Name">
+    <input id="productQuantity" type="text" placeholder="Product Quantity"><br>
+    <button onclick="handleAddToCart()" class="btn mx-10 my-10">Add to Cart</button>
+    <ul class="bg-pink-100 ml-5 text-3xl font-bold" id="cart-list"></ul>
+
+    <script src="Script/script.js"></script>
 </body>
+
 </html>
